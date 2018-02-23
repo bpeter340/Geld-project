@@ -1,0 +1,86 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bank Project</title>
+    <!-- Bootstrap -->
+    <link href="bootstrap Cheat Sheet/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style>
+    .navbar{
+      margin: 0;
+      border-radius: 0;
+      border: 250px;
+      border:20px;
+      background-color: OrangeRed;
+      }
+
+    .navbar-inverse .navbar-nav>li>a{
+      color: white;
+      }
+    .navbar-inverse .navbar-text{
+      color: white;
+      font-size: 18px;
+    }
+
+    .button-position{
+      position:
+    }
+    </style>
+
+  </head>
+  <body>
+    <nav style="color:black;" class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand nav-geld navbar-text" href="#">--Geld Project--</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul style="color= black;" class="nav navbar-nav navbar-text">
+        <li><a href="#">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+
+      <!--  <li><a href="#">Sign Up</a></li> -->
+      <ul class="nav navbar-nav navbar-right navbar-text">
+        <li>
+          <%= link_to('Login', new_user_session_path) %>
+        </li>
+        <li>
+          <%= link_to('Sign Up', new_user_registration_path) %>
+        </li>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div style="height: 500px; background-color:WhiteSmoke;" class="jumbotron">
+  <h2 class="container-fluid text-center"><strong>Welcome to the Geld Project</strong></h2>
+  <hr>
+  <div class="col-md-4">
+  <br>
+  <br>
+  <p >Make <strong>banking</strong>, <strong>saving</strong>, and <strong>spending</strong> a simpler process. To learn more, feel free to click on the button below.</p>
+  <br>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+  <div>
+</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="Bootstrap Cheat Sheet/js/bootstrap.min.js"></script>
+  </body>
+</html>
