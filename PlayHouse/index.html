@@ -6,10 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bank Project</title>
+    <title> Bank Project</title>
     <!-- Bootstrap -->
     <link href="bootstrap Cheat Sheet/css/bootstrap.min.css" rel="stylesheet">
     <style>
+    body{
+      background-color: OrangeRed;
+    }
+    .footer-nav a{
+      text-decoration: none;
+      font-size: 15px;
+      color:white;
+      position: relative;
+      bottom: 15px;
+    }
     .navbar{
       margin: 0;
       border-radius: 0;
@@ -17,7 +27,6 @@
       border:20px;
       background-color: OrangeRed;
       }
-
     .navbar-inverse .navbar-nav>li>a{
       color: white;
       }
@@ -25,9 +34,12 @@
       color: white;
       font-size: 18px;
     }
-
     .button-position{
       position:
+    }
+    .page-title{
+      position: relative;
+      bottom: 15px;
     }
     </style>
 
@@ -63,23 +75,39 @@
       <ul class="nav navbar-nav navbar-right navbar-text">
        <li><a href="#">Login</a></li>
        <li><a href="#">Sign Up</a></li>
-                
+
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 
-<div style="height: 500px; background-color:WhiteSmoke;" class="jumbotron">
-  <h2 class="container-fluid text-center"><strong>Welcome to the Geld Project</strong></h2>
-  <hr>
+<div style="height: 475px; background-color:WhiteSmoke;" class="jumbotron">
+  <h2 class="container-fluid text-center page-title"><strong>Welcome to the Geld Project</strong></h2>
+  <hr style="border-top-color:#989090;">
   <div class="col-md-4">
   <br>
   <br>
   <p >Make <strong>banking</strong>, <strong>saving</strong>, and <strong>spending</strong> a simpler process. To learn more, feel free to click on the button below.</p>
   <br>
   <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
-  <div>
+  </div>
 </div>
+
+<hr style="border-top-color: #989090; position: relative; bottom: 30px;" >
+
+<footer>
+  <div class= "col-md-6">
+    <ul class= "list-inline footer-nav text-center">
+      <li><a href="#">Contact Us</a></li>
+      <li><a href="#">Terms of Use</a></li>
+      <li><a href="#">Report Fraud</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Privacy & Security</a></li>
+    </ul>
+  </div>
+</footer>
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
