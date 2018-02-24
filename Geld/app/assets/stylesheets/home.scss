@@ -1,3 +1,18 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.navbar{
+  margin: 0;
+  border-radius: 0;
+  border: 250px;
+  border:20px;
+  background-color: OrangeRed;
+  }
+
+.navbar-inverse .navbar-nav>li>a{
+  color: white;
+  }
+.navbar-inverse .navbar-text{
+  color: white;
+  font-size: 18px;
+}
+
+.button-position{}
+
