@@ -1,4 +1,4 @@
-<!DOCTYPE html
+<!DOCTYPE html>
 <!--logout links back to landing page-->
 <html lang="en">
   <head>
@@ -7,11 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title> Bank Project</title>
+
     <!-- Bootstrap -->
-    <link href="bootstrap Cheat Sheet/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap Cheat Sheet/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="bootstrap Cheat Sheet/css/fontawesome.min.css" type="text/css" rel="stylesheet">
+
     <style>
+    p.outreach{
+      font-size: 20px;
+      color: white;
+      position:relative;
+      bottom: 30px;
+      right: 50px;
+    }
+    .jumbotron{
+      position: relative;
+      bottom: 20px;
+      background-image: url(https://cdn.gobankingrates.com/wp-content/uploads/2016/10/0-MAIN-onlinebanking-laptop-MaxFrost-GettyImages-508218404.jpg);
+      background-size: 100%;
+    }
     body{
-      background-color: OrangeRed;
+      background-color: #4ABDAC;
     }
     .footer-nav a{
       text-decoration: none;
@@ -23,9 +40,8 @@
     .navbar{
       margin: 0;
       border-radius: 0;
-      border: 250px;
-      border:20px;
-      background-color: OrangeRed;
+      border: 20px;
+      background-color: #4ABDAC;
       }
     .navbar-inverse .navbar-nav>li>a{
       color: white;
@@ -34,12 +50,25 @@
       color: white;
       font-size: 18px;
     }
-    .button-position{
-      position:
-    }
     .page-title{
       position: relative;
       bottom: 15px;
+    }
+    div.icons{
+      float: right;
+      position: relative;
+      margin: 0 65px;
+      bottom:30px;
+    }
+    i.icons{
+      margin:4px;
+      color:WhiteSmoke;
+      background: #4ABDAC
+      border-radius: 3px;
+    }
+    p>a.color-button{
+      background-color: #FC4A1A;
+      border-color: #FC4A1A;
     }
     </style>
 
@@ -50,8 +79,11 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
+
   <body>
-    <nav style="color:black;" class="navbar navbar-inverse">
+
+    <!--Navigation Bar-->
+    <nav class="navbar navbar-inverse" style="margin-bottom: 10px;">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -81,7 +113,8 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<div style="height: 475px; background-color:WhiteSmoke;" class="jumbotron">
+<!--Jumbotron-->
+<div style="height: 500px; background-color:WhiteSmoke;" class="jumbotron">
   <h2 class="container-fluid text-center page-title"><strong>Welcome to the Geld Project</strong></h2>
   <hr style="border-top-color:#989090;">
   <div class="col-md-4">
@@ -89,22 +122,36 @@
   <br>
   <p >Make <strong>banking</strong>, <strong>saving</strong>, and <strong>spending</strong> a simpler process. To learn more, feel free to click on the button below.</p>
   <br>
-  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+  <p><a class="btn btn-primary btn-lg color-button" href="#" role="button">Learn more</a></p>
   </div>
 </div>
 
-<hr style="border-top-color: #989090; position: relative; bottom: 30px;" >
+<hr style="border-top-color: #989090; position: relative; bottom: 50px;" >
 
 <footer>
-  <div class= "col-md-6">
-    <ul class= "list-inline footer-nav text-center">
-      <li><a href="#">Contact Us</a></li>
-      <li><a href="#">Terms of Use</a></li>
-      <li><a href="#">Report Fraud</a></li>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Privacy Policy</a></li>
-      <li><a href="#">Privacy & Security</a></li>
-    </ul>
+  <div class="container-fluid" style="position: relative; bottom:20px;">
+    <div class="row">
+      <div class= "col-md-6">
+        <ul class= "list-inline footer-nav">
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Report Fraud</a></li>
+          <li><a href="#">Privacy & Security</a></li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <p class="outreach text-right">Join Our Community!</p>
+      </div>
+      <div class="icons">
+        <a href="#" title="Facebook"><i class="fab fa-facebook-square fa-2x icons"></i></a>
+        <a href="#" title="Instagram"><i class="fab fa-instagram fa-2x icons"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-twitter fa-2x icons" ></i></a>
+        <a href="#" title="Linkedin"><i class="fab fa-linkedin fa-2x icons"></i></a>
+        <a href="#" title="Youtube"><i class="fab fa-youtube fa-2x icons"></i></a>
+      </div>
+    </div>
   </div>
 </footer>
 
