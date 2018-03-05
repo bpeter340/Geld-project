@@ -16,3 +16,59 @@
 
 .button-position{}
 
+p.outreach{
+  font-size: 20px;
+  color: white;
+  position:relative;
+  bottom: 30px;
+  right: 50px;
+}
+.jumbotron{
+  position: relative;
+  bottom: 20px;
+  background-image: url(https://cdn.gobankingrates.com/wp-content/uploads/2016/10/0-MAIN-onlinebanking-laptop-MaxFrost-GettyImages-508218404.jpg);
+  background-size: 100%;
+}
+body{
+  background-color: #4ABDAC;
+}
+.footer-nav a{
+  text-decoration: none;
+  font-size: 15px;
+  color:white;
+  position: relative;
+  bottom: 15px;
+}
+.navbar{
+  margin: 0;
+  border-radius: 0;
+  border: 20px;
+  background-color: #4ABDAC;
+  }
+.navbar-inverse .navbar-nav>li>a{
+  color: white;
+  }
+.navbar-inverse .navbar-text{
+  color: white;
+  font-size: 18px;
+}
+.page-title{
+  position: relative;
+  bottom: 15px;
+}
+div.icons{
+  float: right;
+  position: relative;
+  margin: 0 65px;
+  bottom:30px;
+}
+i.icons{
+  margin:4px;
+  color:WhiteSmoke;
+  background: #4ABDAC;
+  border-radius: 3px;
+}
+p>a.color-button{
+  background-color: #FC4A1A;
+  border-color: #FC4A1A;
+}
