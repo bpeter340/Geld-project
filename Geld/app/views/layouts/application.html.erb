@@ -6,8 +6,6 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="Bootstrap Cheat Sheet/js/bootstrap.min.js"></script>
-
   </head>
 
   <body>
@@ -37,7 +35,7 @@
       <ul class="nav navbar-nav navbar-right navbar-text">
       <% if user_signed_in? %>
         <li style="margin-top: 12px">
-          Welcome <%= current_user.first_name  %>
+          Welcome <%=current_user.first_name  %>
         </li>
         <li>
           <%= link_to('Log Out', destroy_user_session_path, :method => :delete) %>
@@ -55,38 +53,6 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
     <%= yield %>
-
-<footer>
-  <div class="container-fluid" style="position: relative; bottom:20px;">
-    <div class="row">
-      <div class= "col-md-6">
-        <ul class= "list-inline footer-nav">
-          <li><a href="#">Contact Us</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Terms of Use</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Report Fraud</a></li>
-          <li><a href="#">Privacy & Security</a></li>
-        </ul>
-      </div>
-      <div class="col-md-6">
-        <p class="outreach text-right">Join Our Community!</p>
-      </div>
-      <div class="icons">
-        <a href="#" title="Facebook"><i class="fab fa-facebook-square fa-2x icons"></i></a>
-        <a href="#" title="Instagram"><i class="fab fa-instagram fa-2x icons"></i></a>
-        <a href="#" title="Twitter"><i class="fab fa-twitter fa-2x icons" ></i></a>
-        <a href="#" title="Linkedin"><i class="fab fa-linkedin fa-2x icons"></i></a>
-        <a href="#" title="Youtube"><i class="fab fa-youtube fa-2x icons"></i></a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="Bootstrap Cheat Sheet/js/bootstrap.min.js"></script>
-
-</body>
+  </body>
 </html>

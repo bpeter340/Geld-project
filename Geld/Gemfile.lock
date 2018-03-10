@@ -69,10 +69,6 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.7.0)
-    faraday (0.14.0)
-      multipart-post (>= 1.2, < 3)
-    faraday_middleware (0.12.2)
-      faraday (>= 0.7.4, < 1.0)
     ffi (1.9.21)
     ffi (1.9.21-java)
     ffi (1.9.21-x64-mingw32)
@@ -101,7 +97,6 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     multi_json (1.13.1)
-    multipart-post (2.0.0)
     mysql2 (0.4.10)
     mysql2 (0.4.10-x64-mingw32)
     mysql2 (0.4.10-x86-mingw32)
@@ -116,9 +111,6 @@ GEM
     nokogiri (1.8.2-x86-mingw32)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
-    plaid (4.1.0)
-      faraday
-      faraday_middleware
     pry (0.11.3)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
@@ -233,7 +225,6 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   mysql2
-  plaid
   pry
   puma (~> 3.0)
   rails (~> 5.0.6)
