@@ -1,0 +1,41 @@
+<% if user_signed_in? %>
+  <div id="container">
+      <p>
+      IT WORKED
+      </p>
+
+      <button id="link-btn">Link Account</button>
+  </div>
+
+  <div id="app">
+      <div class="box">
+          <button id="get-accounts-btn">Get Accounts</button>
+          <div id="get-accounts-data"></div>
+      </div>
+
+      <div class="box">
+          <button id="get-item-btn">Get Item</button>
+          <div id="get-item-data"></div>
+      </div>
+
+      <div class="box">
+          <button id="get-transactions-btn">Get Transactions</button>
+          <div id="get-transactions-data"></div>
+      </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+
+<% else %>
+  <div style="height: 500px; background-color:WhiteSmoke;" class="jumbotron">
+    <h2 class="container-fluid text-center"><strong>Welcome to the Geld Project</strong></h2>
+    <hr>
+    <div class="col-md-4">
+    <br>
+    <br>
+    <p >Make <strong>banking</strong>, <strong>saving</strong>, and <strong>spending</strong> a simpler process. To learn more, feel free to click on the button below.</p>
+    <br>
+    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+    </div>
+  </div>
+<% end %>
