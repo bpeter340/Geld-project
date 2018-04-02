@@ -1,22 +1,74 @@
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <body>
+<% if user_signed_in? %>
+  <div id="container">
+      <p>
+          Click the button below to open a list of Institutions - after you select one,
+          you'll be guided through an authentication process. The public_token will be passed
+          back to the example server, which will then exchange it for an access token and log it
+          to your console.
+      </p>
 
-<div style="height: 500px; background-color:WhiteSmoke;" class="jumbotron">
-  <h2 class="container-fluid text-center"><strong>Welcome to the Geld Project</strong></h2>
-  <hr>
-  <div class="col-md-4">
-  <br>
-  <br>
-  <p >Make <strong>banking</strong>, <strong>saving</strong>, and <strong>spending</strong> a simpler process. To learn more, feel free to click on the button below.</p>
-  <br>
-  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
-  <div>
-</div>
+      <button id="link-btn">Link Account</button>
+  </div>
 
-  </body>
-</html>
+  <div id="app">
+      <div class="box">
+          <button id="get-accounts-btn">Get Accounts</button>
+          <div id="get-accounts-data"></div>
+      </div>
+
+      <div class="box">
+          <button id="get-item-btn">Get Item</button>
+          <div id="get-item-data"></div>
+      </div>
+
+      <div class="box">
+          <button id="get-transactions-btn">Get Transactions</button>
+          <div id="get-transactions-data"></div>
+      </div>
+  </div>
+
+<% else %>
+  <div class="container-fluid home">
+    <div class='row pt80'>
+      <h2 class="container-fluid text-center"><strong>Welcome to the Geld Project</strong></h2>
+    </div>
+    <div class='row pt20 pb110'>
+      <div class="col-md-4">
+        <br>
+        <br>
+        <p >Make <strong>banking</strong>, <strong>saving</strong>, and <strong>spending</strong> a simpler process. To learn more, feel free to click on the button below.</p>
+        <br>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+      </div>
+      <div class='col-md-8'>
+        <img src='/assets/Home_Iphone_pic.png' alt='Iphone' height='25%' width='25%'>
+      </div>
+    </div>
+  </div>
+    <div class='desktop-image'>
+      <img src='/assets/Desktop_pic.jpg' alt='Desktop Screen'>
+    </div>
+<% end %>
+<script>
+    function showImages(el) {
+        var windowHeight = jQuery( window ).height();
+        $(el).each(function(){
+            var thisPos = $(this).offset().top;
+
+            var topOfWindow = $(window).scrollTop();
+            if (topOfWindow + windowHeight - 200 > thisPos ) {
+                $(this).addClass("fadeIn");
+            }
+        });
+    }
+
+    // if the image in the window of browser when the page is loaded, show that image
+    $(document).ready(function(){
+            showImages('.desktop-image');
+    });
+
+    // if the image in the window of browser when scrolling the page, show that image
+    $(window).scroll(function() {
+            showImages('.desktop-image');
+    });
+</script>
