@@ -77,6 +77,10 @@ GEM
     ffi (1.9.21-java)
     ffi (1.9.21-x64-mingw32)
     ffi (1.9.21-x86-mingw32)
+    font-awesome-rails (4.7.0.3)
+      railties (>= 3.2, < 5.2)
+    font-awesome-sass (5.0.6.2)
+      sass (>= 3.2)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (0.9.5)
@@ -102,6 +106,7 @@ GEM
     minitest (5.11.3)
     multi_json (1.13.1)
     multipart-post (2.0.0)
+    mustermann (1.0.2)
     mysql2 (0.4.10)
     mysql2 (0.4.10-x64-mingw32)
     mysql2 (0.4.10-x86-mingw32)
@@ -126,9 +131,13 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
       spoon (~> 0.0)
+    pry-rails (0.3.6)
+      pry (>= 0.10.4)
     puma (3.11.2)
     puma (3.11.2-java)
     rack (2.0.4)
+    rack-protection (2.0.1)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.6)
@@ -172,10 +181,17 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    sinatra (2.0.1)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.1)
+      tilt (~> 2.0)
     spoon (0.0.6)
       ffi
     spring (2.0.2)
       activesupport (>= 4.2)
+    spring-commands-rspec (1.0.4)
+      spring (>= 0.9.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
       spring (>= 1.2, < 3.0)
@@ -203,6 +219,7 @@ GEM
       tzinfo (>= 1.0.0)
     uglifier (4.1.6)
       execjs (>= 0.3.0, < 3)
+    vuejs-rails (2.5.13)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.5.1)
@@ -230,21 +247,27 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   devise
+  font-awesome-rails
+  font-awesome-sass (~> 5.0.6)
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
   mysql2
   plaid
   pry
+  pry-rails
   puma (~> 3.0)
   rails (~> 5.0.6)
   sass-rails (~> 5.0)
+  sinatra
   spring
+  spring-commands-rspec
   spring-watcher-listen (~> 2.0.0)
   sqlite3
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
+  vuejs-rails
   web-console (>= 3.3.0)
 
 BUNDLED WITH

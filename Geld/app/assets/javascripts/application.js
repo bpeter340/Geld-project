@@ -11,7 +11,9 @@
 // about supported directives.
 //
 //= require jquery
+//= require vue
 //= require jquery_ujs
+//= require plaid
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
