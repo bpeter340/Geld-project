@@ -29,13 +29,11 @@ gem 'font-awesome-rails'
 
 gem 'autoprefixer-rails'
 
-<<<<<<< HEAD
-#gem 'bcrypt-ruby'
 
 gem 'bcrypt', platforms: :ruby
-=======
+
 gem 'vuejs-rails'
->>>>>>> 212fdf5f6b4ca9dd545aae8ad4cf667b25b81c52
+
 
 gem 'mysql2'
 # Use SCSS for stylesheets
