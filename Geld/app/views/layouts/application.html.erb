@@ -57,16 +57,25 @@
     <%= yield %>
 
 <div style='background-color: #2c3e50;' class='footer'>
-  <div class='row'>
-    <div class='col-md-8 col-md-offset-2'>
+  <div >
+    <div class='col-md-5'>
+      <p class= 'text-uppercase'> Follow us on social media</p>
       <ul class='list-inline'>
-        <li><i class='glyphicon glyphicon-envelope'><a href='#' class='list-inline-item footer-text'></a></i></li>
-        <li><a href='#' class='list-inline-item footer-text'>Link</a></li>
-        <li><a href='#' class='list-inline-item footer-text'>Link</a></li>
-        <li><a href='#' class='list-inline-item footer-text'>Link</a></li>
-        <li><a href='#' class='list-inline-item footer-text'>Link</a></li>
+        <li><a href='#'> <%= fa_icon "facebook", base: "square-o", class: "fa-2x"%></a></li>
+        <li><a href='#'> <%= fa_icon "twitter", base: "square-o", class: "fa-2x"%></a></li>
+        <li><a href='#'> <%= fa_icon "instagram", base: "square-o", class: "fa-2x"%></a></li>
       </ul>
+    </div>
+  </div>
 
+  <div >
+    <div class='col-md-7'>
+      <ul class='list-inline'>
+        <li><a href='#' class='list-inline-item footer-text'>FAQs</a></li>
+        <li><a href='#' class='list-inline-item footer-text'>Help Center</a></li>
+        <li><a href='#' class='list-inline-item footer-text'>Privacy Policy</a></li>
+        <li><a href='#' class='list-inline-item footer-text'>Terms & Conditions of Use</a></li>
+      </ul>
     </div>
   </div>
 </div>
