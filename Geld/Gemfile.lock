@@ -42,6 +42,8 @@ GEM
     autoprefixer-rails (8.0.0)
       execjs
     bcrypt (3.1.11)
+    bcrypt (3.1.11-java)
+    bcrypt (3.1.11-x64-mingw32)
     bcrypt (3.1.11-x86-mingw32)
     bindex (0.5.0)
     bootstrap-sass (3.2.0.2)
@@ -59,6 +61,7 @@ GEM
     concurrent-ruby (1.0.5)
     concurrent-ruby (1.0.5-java)
     crass (1.0.3)
+    date (1.0.0)
     devise (4.4.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -244,6 +247,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.2.0)
   byebug
   coffee-rails (~> 4.2)
+  date
   devise
   font-awesome-rails
   font-awesome-sass (~> 5.0.6)
