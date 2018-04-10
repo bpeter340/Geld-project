@@ -8,7 +8,10 @@ Rails.application.routes.draw do
 
   resource :home do
     member do
-      get :access_token
+      post :access_token, to: 'home#access_token'
+      get :accounts, to: 'home#accounts'
+      get :transactions, to: 'home#transactions'
+      get :item, to: 'home#item'
     end
   end
 

@@ -5,6 +5,8 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag('/assets/Favicon.png', alt:'Logo')%>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+    <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
   </head>
 
   <body>
@@ -27,11 +29,8 @@
       <%=link_to image_tag("/assets/Geld-Project.png"), root_path, class: '  navbar-brand img'%>
       <ul style="color= black;" class="nav navbar-nav navbar-text">
         <li>
-        <%= link_to('Home', root_path) %>
-        </li>
-        <li>
         <%= link_to('About', about_index_path) %>
-        <li>
+        </li>
       </ul>
 
       <!--  <li><a href="#">Sign Up</a></li> -->
@@ -93,7 +92,7 @@
             key: '<%= ENV["PLAID_PUBLIC_KEY"] %>',
             onSuccess: function(public_token) {
               console.log(public_token)
-                $.get('/homes/access_token', {public_token: public_token}, function() {
+                $.post('/home/access_token', {public_token: public_token}, function() {
                     $('#container').fadeOut('fast', function() {
                         $('#intro').hide();
                         $('#app, #steps').fadeIn('slow');
@@ -107,7 +106,7 @@
         });
 
         $('#get-accounts-btn').on('click', function(e) {
-            $.get('/accounts', function(data) {
+            $.get('/home/accounts', function(data) {
                 $('#get-accounts-data').slideUp(function() {
                     var html = '';
                     data.accounts.forEach(function(account, idx) {
@@ -124,8 +123,8 @@
         });
 
         $('#get-item-btn').on('click', function(e) {
-            $.get('/item', function(data) {
-                $('#get-item-data').slideUp(function() {
+            $.get('/home/item', function(data) {
+                $('#get-item-data').toggle(function() {
                     if(data.error)
                         $(this).html('<p>' + data.error + '</p>').slideDown();
                     else {
@@ -143,7 +142,7 @@
         });
 
     $('#get-transactions-btn').on('click', function(e) {
-      $.get('/transactions', function(data) {
+      $.get('/home/transactions', function(data) {
         if (data.error != null) {
           // Format the error
           var errorHtml = '<div class="inner"><p>' +
@@ -184,8 +183,6 @@
     });
     })(jQuery);
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
-    <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
 
   </body>
 </html>

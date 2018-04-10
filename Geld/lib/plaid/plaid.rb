@@ -2,7 +2,7 @@ require 'date'
 require 'sinatra'
 require 'plaid'
 
-module Plaid
+module PlaidAPI
 
   class Client
 
