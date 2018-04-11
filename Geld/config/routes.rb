@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'about/index'
+  get 'about', to: 'about#index'
 
   get 'user_page/index'
 
