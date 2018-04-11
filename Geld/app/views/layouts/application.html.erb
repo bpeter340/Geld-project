@@ -7,11 +7,11 @@
     <%= favicon_link_tag('/assets/Favicon.png', alt:'Logo')%>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
     <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
+    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <%= javascript_include_tag 'application' %>
-    <nav style="color:black;" class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -95,7 +95,7 @@
                 $.post('/home/access_token', {public_token: public_token}, function() {
                     $('#container').fadeOut('fast', function() {
                         $('#intro').hide();
-                        $('#app, #steps').fadeIn('slow');
+                        $('#app').fadeIn('slow');
                     });
                 });
             },
@@ -105,7 +105,7 @@
             handler.open();
         });
 
-        $('#get-accounts-btn').on('click', function(e) {
+        $("#app").ready( function(e) {
             $.get('/home/accounts', function(data) {
                 $('#get-accounts-data').slideUp(function() {
                     var html = '';
@@ -122,7 +122,7 @@
             });
         });
 
-        $('#get-item-btn').on('click', function(e) {
+        $("#app").ready( function(e) {
             $.get('/home/item', function(data) {
                 $('#get-item-data').toggle(function() {
                     if(data.error)
@@ -141,7 +141,7 @@
             });
         });
 
-    $('#get-transactions-btn').on('click', function(e) {
+    $("#app").ready( function(e) {
       $.get('/home/transactions', function(data) {
         if (data.error != null) {
           // Format the error
