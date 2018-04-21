@@ -36,6 +36,10 @@ gem 'bcrypt', platforms: :ruby
 
 gem 'vuejs-rails'
 
+gem 'vuejs'
+
+gem 'chart-js-rails'
+
 
 gem 'mysql2'
 # Use SCSS for stylesheets

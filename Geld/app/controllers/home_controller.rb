@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
-ENV['PLAID_CLIENT_ID'] = '5a92f26d8d9239244b8061e0'
-ENV['PLAID_SECRET'] = '2ecc1b9c97ee73f967d90586a5af7a'
+ENV['PLAID_CLIENT_ID']  = '5a92f26d8d9239244b8061e0'
+ENV['PLAID_SECRET']     = '2ecc1b9c97ee73f967d90586a5af7a'
 ENV['PLAID_PUBLIC_KEY'] = '11ed3e225b8e10a435dc449dca8d51'
 
   def index
@@ -37,6 +37,7 @@ ENV['PLAID_PUBLIC_KEY'] = '11ed3e225b8e10a435dc449dca8d51'
     now = Date.today
     thirty_days_ago = (now - 30)
     transactions_response = $client.transactions.get($access_token, thirty_days_ago, now)
+    transactions = transactions_response["transactions"]
 
     render json: transactions_response.to_json
   end

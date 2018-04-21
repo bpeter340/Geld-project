@@ -104,85 +104,88 @@
         $('#link-btn').on('click', function(e) {
             handler.open();
         });
+        $('.get-transactions').on('click', function() {
+          $('.get-transactions').hide("slow");
+        })
 
-        $("#app").ready( function(e) {
-            $.get('/home/accounts', function(data) {
-                $('#get-accounts-data').slideUp(function() {
-                    var html = '';
-                    data.accounts.forEach(function(account, idx) {
-                        html += '<div class="inner">';
-                        html += '<strong>' + account.name +
-                                ' $' + (account.balances.available != null ? account.balances.available : account.balances.current) + '</strong><br>';
-                        html += account.subtype + ' ' + account.mask;
-                        html += '</div>';
-                    });
-
-                    $(this).html(html).slideDown();
-                });
-            });
-        });
-
-        $("#app").ready( function(e) {
-            $.get('/home/item', function(data) {
-                $('#get-item-data').toggle(function() {
-                    if(data.error)
-                        $(this).html('<p>' + data.error + '</p>').slideDown();
-                    else {
-                        var html = '<div class="inner">';
-                        html += '<p>Here\'s some basic information about your Item:</p>';
-                        html += '<p>Institution name:' + data.institution.name +'</p>';
-                        html += '<p>Billed products: ' + data.item.billed_products.join(', ') + '</p>';
-                        html += '<p>Available products: ' + data.item.available_products.join(', ') + '</p>';
-                        html += '</div>';
-
-                        $(this).html(html).slideDown();
-                    }
-                });
-            });
-        });
-
-    $("#app").ready( function(e) {
-      $.get('/home/transactions', function(data) {
-        if (data.error != null) {
-          // Format the error
-          var errorHtml = '<div class="inner"><p>' +
-           '<strong>' + data.error.error_code + ':</strong> ' +
-           data.error.error_message + '</p></div>';
-
-          if (data.error.error_code === 'PRODUCT_NOT_READY') {
-            // Add additional context for `PRODUCT_NOT_READY` errors
-            errorHtml += '<div class="inner"><p>The PRODUCT_NOT_READY ' +
-             'error is returned when a request to retrieve Transaction data ' +
-             'is made before Plaid finishes the <a href="https://plaid.com/' +
-             'docs/quickstart/#transaction-data-with-webhooks">initial ' +
-             'transaction pull.</a></p></div>';
-          }
-          // Render the error
-          $('#get-transactions-data').slideUp(function() {
-            $(this).slideUp(function() {
-              $(this).html(errorHtml).slideDown();
-            });
-          });
-        } else {
-          $('#get-transactions-data').slideUp(function() {
-            var html = '';
-            data.transactions.forEach(function(txn, idx) {
-              html += '<div class="inner">';
-              html += '<strong>' + txn.name + '</strong><br>';
-              html += '$' + txn.amount;
-              html += '<br><em>' + txn.date + '</em>';
-              html += '</div>';
-            });
-
-            $(this).slideUp(function() {
-              $(this).html(html).slideDown();
-            });
-          });
-        }
-      });
-    });
     })(jQuery);
+
+    function getAmount(jsondata, jsoncateg) {
+      var data = jsondata;
+      var categories = jsoncateg;
+      var newData = [];
+      var newAmount = [];
+      categories.forEach((category, index) => {
+        newData[index] = data.filter(function(ob) {
+          return ob.category[0] == categories[index];
+        })
+      })
+      newData.forEach((category, index) => {
+        newAmount[index] = category.reduce(function (total, ob) { return total + ob.amount }, 0)
+      })
+      newAmount = newAmount.map(function(each_element){
+        return Number(each_element.toFixed(2));
+      })
+      return newAmount;
+    }
+
+    function getCategories(jsondata) {
+      var data = jsondata;
+      var newData = [];
+      data.forEach((txn, index) => {
+       newData[index] = txn.category[0]
+      })
+      unqData = Array.from(new Set(newData))
+      return unqData;
+    }
+
+    const app = new Vue({
+      el: '#app',
+
+      data: {
+        transactions: [],
+        loading: false,
+        transactionClicked: false,
+        categories: [],
+        defaultData: []
+      },
+
+      methods: {
+        fetchTransactions: function() {
+          this.loading = true;
+            $.ajax({
+              url: "/home/transactions",
+              type: "GET",
+              datatype: "json",
+            }).done(function (data){
+              this.transactions = data.transactions;
+              this.loading = false;
+              this.categories = getCategories(data.transactions);
+              this.defaultData = getAmount(data.transactions, this.categories);
+
+              new Chart(document.getElementById("myCanvas"), {
+                type: "doughnut",
+                data: {
+                  labels: this.categories,
+                    datasets: [{
+                      label: "Dollars ($)",
+                      backgroundColor: ["#3e95cd", "#58FCC1","#11e1ff","#ffce00","#c45850","#a33cf4", "#99ffff"],
+                      data: this.defaultData
+                    }]
+                  },
+                  options: {
+                    title: {
+                      display: true,
+                      text: 'Here is what you\'ve spent your money on ($)'
+                    }
+                  }
+              })
+            }.bind(this));
+        }
+      }
+    })
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
 
   </body>
 </html>
