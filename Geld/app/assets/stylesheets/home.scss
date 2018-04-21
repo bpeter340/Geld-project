@@ -138,6 +138,7 @@ button:hover { color: #28bb9c; cursor: pointer; }
 .pl20 { padding-left:   20px !important; }
 .pl25 { padding-left:   25px !important; }
 .pl30 { padding-left:   30px !important; }
+.p10  { padding:        10px !important; }
 .fadeIn {
   -webkit-animation: animat_show 1.5s;
   animation: animat_show 1.5s;
@@ -147,6 +148,14 @@ button:hover { color: #28bb9c; cursor: pointer; }
 @-webkit-keyframes animat_show{
   0%{opacity:0}
   100%{opacity:1}
+}
+.border-no-left{
+  border-right: 2px solid #f7f7f7;
+  border-bottom: 2px solid #f7f7f7;
+  border-top: 2px solid #f7f7f7;
+}
+.border{
+  border: 2px solid #f7f7f7;
 }
 #get-transactions-data{
   overflow: auto;
@@ -170,8 +179,8 @@ button:hover { color: #28bb9c; cursor: pointer; }
   -moz-border-radius: 10px;
   -webkit-border-radius: 200px;
   margin: 10px;
-  width: 400px;
-  height: 400px;
+  width: 200px;
+  height: 200px;
 }
 #link-btn:hover{
   color: #28bb9c;

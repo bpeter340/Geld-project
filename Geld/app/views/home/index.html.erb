@@ -4,33 +4,41 @@
     <h2 class="pb40"> Hi
       <%= current_user.first_name %>!
       Please click this button to link your bank account!
-    </h4>
+    </h2>
     <button id="link-btn">Link Account</button>
+    <h3 class="pt40"> For safety reasons if you change pages you will need to re-login to your bank account!</h3>
   </div>
 
   <div id="app">
     <div class="row">
       <div class="col-md-12">
         <h2> Hi
-          <%= current_user.first_name %>
-          here is your bank info!
+          <%= current_user.first_name %>!
+          Here is your bank info!
         </h2>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4">
-        <h3> Transactions </h3>
-        <div id="get-transactions-data"></div>
+      <div class="col-md-4 border p10">
+        <button class="get-transactions" v-on:click="fetchTransactions">Click to Start!</button>
+        <div id="get-transactions-data">
+          <div class="inner" v-for="transaction in transactions">
+            <strong> {{transaction.name}} </strong>
+            <br>
+                ${{transaction.amount}}
+            <br>
+            <em>{{transaction.date}}</em>
+            <br>
+            <em>{{transaction.category[0]}}</em>
+          </div>
+        </div>
       </div>
-
-      <div class="col-md-4">
-        <h3> Item </h3>
-        <div id="get-item-data"></div>
-      </div>
-
-      <div class="col-md-4">
-        <h3> Accounts </h3>
-        <div id="get-accounts-data"></div>
+      <div class="col-md-8 border-no-left">
+        <div class="row">
+          <canvas id="myCanvas" width="1200" height="350"></canvas>
+        </div>
+        <div class="row">
+        </div>
       </div>
     </div>
   </div>
@@ -81,3 +89,4 @@
             showImages('.desktop-image');
     });
 </script>
+

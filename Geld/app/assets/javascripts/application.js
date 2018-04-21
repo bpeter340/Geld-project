@@ -11,7 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require Chart.min
 //= require vue
+//= require vuex
+//= require vue-router
+//= require vue-resource
+//= require vue-validator
 //= require jquery_ujs
 //= require plaid
 //= require turbolinks
