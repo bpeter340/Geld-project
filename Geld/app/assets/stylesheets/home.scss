@@ -89,6 +89,7 @@ button {
     border-radius: 4px;
 }
 button:hover { color: #28bb9c; cursor: pointer; }
+.btn-geld:hover { color: #28bb9c !important; cursor: pointer; }
 
 #app { display: none; }
 #app textarea { display: none; height: 100px; width: 260px; padding: 10px; font-size: 14px; }
