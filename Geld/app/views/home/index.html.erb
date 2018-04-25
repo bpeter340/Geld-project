@@ -6,7 +6,7 @@
       Please click this button to link your bank account!
     </h2>
     <button id="link-btn">Link Account</button>
-    <h3 class="pt40"> For safety reasons if you change pages you will need to re-login to your bank account!</h3>
+    <h3 class="pt40"> For security reasons if you change pages you will need to re-login to your bank account!</h3>
   </div>
 
   <div id="app">
@@ -20,7 +20,7 @@
     </div>
     <div class="row">
       <div class="col-md-4 border p10">
-        <button class="get-transactions" v-on:click="fetchTransactions">Click to Start!</button>
+          <h3>Transactions</h3>
         <div id="get-transactions-data">
           <div class="inner" v-for="transaction in transactions">
             <strong> {{transaction.name}} </strong>
@@ -33,11 +33,49 @@
           </div>
         </div>
       </div>
-      <div class="col-md-8 border-no-left">
-        <div class="row">
-          <canvas id="myCanvas" width="1200" height="350"></canvas>
+      <div class="col-md-8 ">
+        <div class="row border-no-left">
+          <canvas id="myCanvas" width="700" height="350"></canvas>
         </div>
         <div class="row">
+          <div class="finCalc">
+            <div>
+              <button type="button" class="btn btn-geld" data-toggle="modal" data-target="#exampleModalLong">
+                Savings Calc
+              </button>
+            </div>
+            <div class="row">
+              <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <h3 class="modal-title" id="exampleModalLongTitle">Use this calculator to save!</h3>
+                    </div>
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="col-md-6 text-left">
+                          <h4> Money Spent: ${{totalSpent}} </h4>
+                          <br>
+                          <h4> Total Savings: ${{accountTotal}} </h4>
+                          <br>
+                        </div>
+                        <div class="col-md-6">
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary btn-geld" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
       </div>
     </div>
