@@ -6,6 +6,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag('/assets/Favicon.png', alt:'Logo')%>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+    <script src="https://unpkg.com/popper.js"></script>
     <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
     <%= javascript_include_tag 'application' %>
   </head>
@@ -15,7 +16,6 @@
 
     <%= yield %>
 
-<%= render partial: 'layouts/footer' %>
 
     <script>
     (function($) {
@@ -27,7 +27,7 @@
             key: '<%= ENV["PLAID_PUBLIC_KEY"] %>',
             onSuccess: function(public_token) {
               console.log(public_token)
-                $.post('/home/access_token', {public_token: public_token}, function() {
+                $.post('/user_page/access_token', {public_token: public_token}, function() {
                     $('#container').fadeOut('fast', function() {
                         $('#intro').hide();
                         $('#app').fadeIn('slow');
@@ -46,16 +46,23 @@
                             defaultData: [],
                             totalSpent: "",
                             accounts: [],
+                            accountTxn: [],
+                            accountTransactions: [],
                             item: "",
-                            accountTotal: []
-
+                            accountTotal: [],
+                            expected_total: "",
+                            monthly_expenses: "",
+                            calculated: "",
                           },
 
                           methods: {
+                            savingsCalc: function() {
+                              this.calculated = parseInt(this.expected_total) + parseInt(this.monthly_expenses);
+                            },
                             fetchTransactions: function() {
                               this.loading = true;
                                 $.ajax({
-                                  url: "/home/transactions",
+                                  url: "/user_page/transactions",
                                   type: "GET",
                                   datatype: "json",
                                 }).done(function (data){
@@ -63,8 +70,9 @@
                                   this.accounts = data.accounts
                                   this.item = data.item
                                   this.loading = false
-                                  this.categories = getCategories(data.transactions);
-                                  this.defaultData = getAmount(data.transactions, this.categories);
+                                  this.accountIds = getAccountIds(this.accounts)
+                                  this.categories = getCategories(data.transactions)
+                                  this.defaultData = getAmount(data.transactions, this.categories)
                                   this.totalSpent = totalSpend(this.defaultData)
                                   this.accountTotal = totalAccountAmount(this.accounts)
 
@@ -100,6 +108,18 @@
         });
 
     })(jQuery);
+
+    function getAccountIds(jsonAccounts) {
+      var accounts = jsonAccounts;
+      var accountIds = [];
+
+      accounts.forEach((account, index) => {
+        accountIds[index] = account.account_id;
+      })
+      console.log(accountIds)
+      return accountIds;
+    }
+
     function totalAccountAmount(jsondata) {
       var accounts = jsondata;
       var accountAmount = [];

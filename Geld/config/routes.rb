@@ -2,16 +2,16 @@ Rails.application.routes.draw do
 
   get 'about', to: 'about#index'
 
-  get 'user_page/index'
+  get 'app', to: 'user_page#index'
 
   get 'home/index'
 
-  resource :home do
+  resource :user_page do
     member do
-      post :access_token, to: 'home#access_token'
-      get :accounts, to: 'home#accounts'
-      get :transactions, to: 'home#transactions'
-      get :item, to: 'home#item'
+      post :access_token, to: 'user_page#access_token'
+      get :accounts, to: 'user_page#accounts'
+      get :transactions, to: 'user_page#transactions'
+      get :item, to: 'user_page#item'
     end
   end
 
