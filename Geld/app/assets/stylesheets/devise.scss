@@ -1,6 +1,42 @@
-/*
-.sign_up_text_field {
-  padding: 10px 5px;
-  width: 20%;
+.border-form-div {
+  background-color: #f2f2f2 !important;
+  max-width: 300px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 10px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+          box-shadow: 0 1px 2px rgba(0,0,0,.05);
 }
-*/
+.border-form-div .form-signin-heading,
+.border-form-div .checkbox {
+  margin-bottom: 10px;
+}
+.border-form-div input[type="text"],
+.border-form-div input[type="email"],
+.border-form-div input[type="password"] {
+  font-size: 16px;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 7px 9px;
+}
+.btn {
+    background-color: #2c3e50;
+    background-image: -webkit-linear-gradient(top, #2c3e50, #2c3e50 );
+    background-image: linear-gradient(to bottom, #2c3e50, #2c3e50 );
+    border-color: #2c3e50;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: inset 0 1px 2px rgba(255,255,255,0.1),0 1px 2px rgba(19,49,69,0.2);
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 10px 30px;
+    font-size: 18px;
+    border-radius: 4px;
+}
+.btn:hover { color: #28bb9c; cursor: pointer; }
+
