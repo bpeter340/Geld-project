@@ -16,6 +16,15 @@
 
     <%= yield %>
 
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+  <iframe src="https://giphy.com/embed/3o7TKNkzG2YLWPpYBO" width="480" height="330" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/hulu-fxx-its-always-sunny-in-philadelphia-3o7TKNkzG2YLWPpYBO">via GIPHY</a></p>
+      </div>
+    </div>
+  </div>
+</div>
 
     <script>
     (function($) {
@@ -169,7 +178,22 @@
       unqData = Array.from(new Set(newData))
       return unqData;
     }
+    function onKonamiCode(cb) {
+      var input = '';
+      var key = '38384040373937396665';
+      document.addEventListener('keydown', function (e) {
+        input += ("" + e.keyCode);
+        if (input === key) {
+          return cb();
+        }
+        if (!key.indexOf(input)) return;
+        input = ("" + e.keyCode);
+      });
+    }
 
+    onKonamiCode(function () {
+      $("#myModal").modal("show");
+    })
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
 

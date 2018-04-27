@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'brian', to: 'brians#index'
+
   get 'about', to: 'about#index'
 
   get 'app', to: 'user_page#index'
