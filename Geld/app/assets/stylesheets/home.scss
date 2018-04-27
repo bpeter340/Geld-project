@@ -10,6 +10,14 @@ html, body{
 .desktop-image{
   visibility: hidden;
 }
+.hiddenBrian>a {
+  color: #000 !important;
+  text-decoration: none;
+}
+.hiddenBrian>a:hover {
+  color: #28bb9c !important;
+  text-decoration: none;
+}
 .navbar{
   margin: 0;
   border-radius: 0;
@@ -42,9 +50,11 @@ html, body{
   }
 .footer-text{
   color: white;
+  text-decoration: none;
 }
 .footer-text:hover{
   color: #28bb9c;
+  text-decoration: none;
 }
 .navbar-inverse .navbar-nav>li>a{
   color: white;
