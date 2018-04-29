@@ -6,8 +6,11 @@ Rails.application.routes.draw do
 
   get 'app', to: 'user_page#index'
 
+  get 'new_contact', to: 'contacts#new' 
+
   get 'home/index'
 
+  resources :contacts, only: [:new,:create]
   resource :user_page do
     member do
       post :access_token, to: 'user_page#access_token'

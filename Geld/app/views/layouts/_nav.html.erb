@@ -14,9 +14,12 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <%=link_to image_tag("/assets/Geld-Project.png"), root_path, class: '  navbar-brand img'%>
-      <ul style="color= black;" class="nav navbar-nav navbar-text">
+      <ul class="nav navbar-nav navbar-left navbar-text">
         <li>
         <%= link_to('About', about_path) %>
+        </li>
+        <li>
+        <%= link_to('Contact Us', new_contact_path) %>
         </li>
       </ul>
 
