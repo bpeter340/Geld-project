@@ -8,7 +8,7 @@ attribute :nickname,  :captcha  => true
 # in ActionMailer accepts.
 def headers
   {
-    :subject => "Contact Form",
+    :subject => "Geld-Support Form",
     :to => "Bapeter01@indianatech.net",
     :from => %("#{name}" <#{email}>)
   }
