@@ -1,0 +1,29 @@
+
+<div class="pt100">
+  <div class="text-center border-form-div">
+
+  <%= form_for @contact do |f| %>
+    <h2>Contact Us</h2>
+    <div class="field">
+    <%= f.label :name%><br>
+    <%= f.text_field :name, required: true %>
+    </div>
+
+    <br>
+
+    <div class="field">
+    <%= f.label :email%><br>
+    <%= f.text_field :email, required: true %>
+    </div>
+
+    <br>
+
+    <div class="field">
+    <%= f.label :message%><br>
+    <%= f.text_area :message, as: :text %>
+    </div>
+
+    <%= f.submit "Send Message", class: "btn"%>
+  <% end %>
+  </div>
+</div>
