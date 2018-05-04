@@ -9,7 +9,7 @@ attribute :nickname,  :captcha  => true
 def headers
   {
     :subject => "Geld-Support Form",
-    :to => "Bapeter01@indianatech.net",
+    :to => "kobe@rouxbe.com",
     :from => %("#{name}" <#{email}>)
   }
 end
