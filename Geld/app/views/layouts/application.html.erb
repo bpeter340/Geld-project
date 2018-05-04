@@ -62,11 +62,14 @@
                             expected_total: "",
                             monthly_expenses: "",
                             calculated: "",
+
                           },
 
                           methods: {
                             savingsCalc: function() {
-                              this.calculated = parseInt(this.expected_total) + parseInt(this.monthly_expenses);
+                              this.expected_total = parseInt(this.expected_total)
+                              this.monthly_expenses = parseInt(this.monthly_expenses)
+                              this.calculated = 0
                             },
                             fetchTransactions: function() {
                               this.loading = true;

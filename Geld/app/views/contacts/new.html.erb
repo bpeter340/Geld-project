@@ -1,9 +1,9 @@
-
 <div class="pt100">
-  <div class="text-center border-form-div">
+  <div class="text-center border-form-div-contact" >
 
   <%= form_for @contact do |f| %>
     <h2>Contact Us</h2>
+  <% if !user_signed_in? %>
     <div class="field">
     <%= f.label :name%><br>
     <%= f.text_field :name, required: true %>
@@ -17,11 +17,13 @@
     </div>
 
     <br>
+  <% end %>
 
     <div class="field">
     <%= f.label :message%><br>
-    <%= f.text_area :message, as: :text %>
+    <%= f.text_area :message, as: :text, rows: '8', style: "width: 80%; resize: none;" %>
     </div>
+    <br>
 
     <%= f.submit "Send Message", class: "btn"%>
   <% end %>
