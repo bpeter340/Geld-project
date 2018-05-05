@@ -1,42 +1,27 @@
 <div class="pt80">
   <div class="text-center border-form-div">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
     <h2>Sign up</h2>
     <div class= "container-fluid">
-      <div class="field">
-        <%= f.label :first_name %><br />
-        <%= f.text_field :first_name, autocomplete: "first_name", autofocus: true, class: "sign_up_text_field"%>
-      </div>
+      <%= f.input :first_name, autocomplete: 'first_name', autofocus: true, required: true, placeholder:'First Name'%>
 
-      <div class="field">
-        <%= f.label :last_name %><br />
-        <%= f.text_field :last_name, autocomplete: "last_name", class: "sign_up_text_field"%>
-      </div>
+      <%= f.input :last_name, autocomplete: "last_name", required: true,placeholder:'Last Name'%>
 
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autocomplete: "email", class: "sign_up_text_field"%>
-      </div>
+      <%= f.input :email, autocomplete: "email", placeholder: 'email@example.com'%>
 
-      <div class="field">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "off", class: "sign_up_text_field"%>
-      </div>
+      <%= f.input :password, autocomplete: "off", input_html: {maxlength: 20, class:'hint'}, placeholder:'Password',
+       hint: 'Must be at least 6 characters long', error: 'Password must be at least 6 characters long'%>
 
-      <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off", class: "sign_up_text_field"%>
-      </div>
+      <%= f.input :password_confirmation, label: 'Confirm Password', autocomplete: "off",
+       input_html: {maxlength: 20},error: 'Passwords do not match',placeholder:'Confirm Password'%>
 
-      <div class="actions">
-        <%= f.submit "Sign up", class: "btn" %>
-      </div>
+      <%= f.button :submit, "Submit"%><br><br>
     <% end %>
-    <%= render "devise/shared/links" %>
+    <p>Already have a Geld account?<%= render "devise/shared/links" %></p>
+
     </div>
   </div>
 </div>
+<br><br>
+<%=render partial: 'layouts/footer'%>

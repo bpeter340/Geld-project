@@ -39,6 +39,8 @@ gem 'bcrypt', platforms: :ruby
 
 gem 'vuejs-rails'
 
+gem 'simple_form'
+
 gem 'popper_js', '~> 1.12.9'
 
 gem 'vuejs'

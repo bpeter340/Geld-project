@@ -1,31 +1,23 @@
 <div class="pt100">
   <div class="text-center border-form-div-contact" >
 
-  <%= form_for @contact do |f| %>
+  <%= simple_form_for @contact do |f| %>
     <h2>Contact Us</h2>
   <% if !user_signed_in? %>
-    <div class="field">
-    <%= f.label :name%><br>
-    <%= f.text_field :name, required: true %>
-    </div>
 
     <br>
+    <%= f.input :name, autofocus: true, placeholder: 'Enter your name'%>
 
-    <div class="field">
-    <%= f.label :email%><br>
-    <%= f.text_field :email, required: true %>
-    </div>
+    <%= f.input :email, autocomplete:"email", placeholder: 'email@example.com'%>
 
-    <br>
   <% end %>
 
-    <div class="field">
-    <%= f.label :message%><br>
-    <%= f.text_area :message, as: :text, rows: '8', style: "width: 80%; resize: none;" %>
-    </div>
-    <br>
+    <%= f.input :message, as: :text, input_html: {class: 'textbox', maxlength: 300},
+    placeholder: 'Enter your message here'%><br>
 
-    <%= f.submit "Send Message", class: "btn"%>
+    <%= f.button :submit, "Send Message"%>
   <% end %>
   </div>
 </div>
+<br><br>
+<%=render partial: 'layouts/footer'%>
