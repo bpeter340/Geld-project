@@ -10,6 +10,9 @@
 
     <%= f.input :email, autocomplete:"email", placeholder: 'email@example.com'%>
 
+    <%= f.input :subject, placeholder:'What are you experiencing issues with?',
+    input_html: { maxlength: 40}, label: 'Subject (Optional)'%>
+
   <% end %>
 
     <%= f.input :message, as: :text, input_html: {class: 'textbox', maxlength: 300},
